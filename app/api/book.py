@@ -69,6 +69,7 @@ def delete_book(book_id: int, db: Session = Depends(get_db)):
     """
     Kitobni o\'chirish.
 
+    
     Parametrlar:
     book_id (int): o\'chiriladigan kitobning ID raqami
     """

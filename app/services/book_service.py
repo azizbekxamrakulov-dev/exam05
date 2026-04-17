@@ -92,10 +92,13 @@ class BookService:
         """
         db_book = db.query(Book).filter(Book.id == book_id).first()
 
+
         if not db_book:
             return None
 
+
         db.delete(db_book)
         db.commit()
+
 
         return {"message": "Book deleted"}

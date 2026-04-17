@@ -9,12 +9,15 @@ class BookBase(BaseModel):
     rating: float
 
 
+
 class BookCreate(BookBase):
     pass
 
 
+
 class BookUpdate(BookBase):
     pass
+
 
 
 class BookResponse(BookBase):
