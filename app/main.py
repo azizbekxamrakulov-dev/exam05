@@ -1,15 +1,10 @@
 from fastapi import FastAPI
-from .database import engine, Base
-from .routers import books
+from app.db.session import engine
+from app.db.base import Base
+from app.api.book import router as book_router
 
-# Jadvalni avtomatik yaratish
+app = FastAPI()
+
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Book Management API")
-
-# Routerni ulash
-app.include_router(books.router)
-
-@app.get("/")
-def root():
-    return {"message": "Book Management API ishga tushdi!"}
+app.include_router(book_router)
